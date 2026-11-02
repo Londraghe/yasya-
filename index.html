@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша история 💕</title>
+    <!-- Подключаем красивые шрифты Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Библиотека для эффекта конфетти -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Главный экран -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="main-title">Наша история любви </h1>
+            <p class="subtitle">Сайт, созданный специально для нас</p>
+            <div class="hero-card">
+                <img src="images/imagesmainphoto.jpg" alt="Мы вместе" class="hero-img">
+                <div class="counter-box">
+                    <p>Мы вместе уже:</p>
+                    <div id="together-counter" class="counter-timer">Загрузка...</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Галерея воспоминаний -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Маленькие моменты с наших отношений😊</h2>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <img src="images/\photo_2026-09-12_01-40-16.jpg" alt="Воспоминание 1">
+                    <p class="photo-caption">Наше первое совместное фото ❤️</p>
+                </div>
+                <div class="photo-card">
+                    <img src="images/photo_2026-09-12_01-42-30.jpg" alt="Воспоминание 2">
+                    <p class="photo-caption">Наш первый совместный отдых за городом ⛵</p>
+                </div>
+                <div class="photo-card">
+                    <img src="images/photo_5_2026-09-12_00-44-44.jpg" alt="Воспоминание 3">
+                    <p class="photo-caption">❄️Немного прохладные покатушки⛸</p>
+                </div>
+                <div class="photo-card">
+                    <img src="images/photo_1_2026-09-12_00-44-44.jpg" alt="Воспоминание 4">
+                    <p class="photo-caption">А тут настя дура рукожопая😡</p>
+                </div>
+                <div class="photo-card">
+                    <img src="images/photo_8_2026-09-12_00-44-44.jpg" alt="Воспоминание 5">
+                    <p class="photo-caption">Вот это ты маленькая👧</p>
+                </div>
+                <div class="photo-card">
+                    <img src="images/photo_9_2026-09-12_00-44-44.jpg" alt="Воспоминание 6">
+                    <p class="photo-caption">А вот это я маленький🧒🏻</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Квест «Проверь свою память» -->
+    <section class="quiz-section">
+        <div class="container">
+            <h2 class="section-title">Мини-квест: Помнишь ли ты? 🧩</h2>
+            <p class="quiz-intro">Ответь на несколько вопросов про нашу историю!</p>
+
+            <div class="quiz-container">
+                <!-- Вопрос 1 -->
+                <div class="quiz-card" id="q1">
+                    <h3>1. Когда мы впервые пошли вместе гулять?</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" onclick="checkAnswer('q1', false)">3 ноября</button>
+                        <button class="option-btn" onclick="checkAnswer('q1', true)">20 октября</button>
+                        <button class="option-btn" onclick="checkAnswer('q1', false)">22 октября</button>
+                    </div>
+                    <div class="quiz-feedback" id="feedback-q1"></div>
+                </div>
+
+                <!-- Вопрос 2 -->
+                <div class="quiz-card" id="q2">
+                    <h3>2. Где мы впервые поцеловались?</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" onclick="checkAnswer('q2', false)">В кино</button>
+                        <button class="option-btn" onclick="checkAnswer('q2', false)">Дома за просмотром фильма</button>
+                        <button class="option-btn" onclick="checkAnswer('q2', true)">На площадке</button>
+                    </div>
+                    <div class="quiz-feedback" id="feedback-q2"></div>
+                </div>
+                <div class="quiz-container">
+                    <!-- Вопрос 3 -->
+                    <div class="quiz-card" id="q3">
+                        <h3>3. Когда мы познакомились?</h3>
+                        <div class="options-grid">
+                            <button class="option-btn" onclick="checkAnswer('q1', false)">19 октября</button>
+                            <button class="option-btn" onclick="checkAnswer('q1', false)">13 октября</button>
+                            <button class="option-btn" onclick="checkAnswer('q1', true)">17 октября</button>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-q1"></div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Письмо с признанием -->
+    <section class="love-letter-section">
+        <div class="container">
+            <div class="letter-card">
+                <h2 class="letter-title">Моей любимой лисёнке🦊</h2>
+                <div class="letter-body">
+                    <p>Любимая моя</p>
+                    <p>
+                        Я хочу сказать тебе огромное спасибо за каждый день, который мы проводим вместе. 
+                        С появления тебя в моей жизни я начал испытывать те эмоции и чувства о которых даже не догадывался.
+                        Я невероятно сильно ценю наши отношения, твою заботу, твою улыбку ради которой я стараюсь и то как сильно мы стараемся и поддерживаем друг друга.
+                        Я очень сильно тебя люблю❤️
+                    </p>
+                    <p>
+                        Я бесконечно ценю наши отношения, твою заботу, твою улыбку и то, как сильно мы стараемся 
+                        и поддерживаем друг друга. Я очень сильно тебя люблю❤️!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Приглашение на свидание -->
+    <section class="date-invite-section">
+        <div class="container">
+            <div class="invite-card">
+                <h2>Особое приглашение 🎟️</h2>
+                <p class="invite-desc">Я хочу забрать тебя с собой на целый день!</p>
+                <p class="invite-details">Впереди нас ждёт незабываемый день, полный сюрпризов, подарков и незабываемых чувств.</p>
+                
+                <button id="accept-btn" class="main-btn" onclick="acceptInvitation()">Я принимаю приглашение! ❤️</button>
+                <div id="accepted-message" class="hidden-message">
+                     Ура! Готовься к самому лучшему дню!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Сделано с любовью, специально для тебя ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

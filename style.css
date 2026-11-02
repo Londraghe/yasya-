@@ -1,0 +1,286 @@
+/* --- Сброс базовых стилей и переменные --- */
+:root {
+    --primary-color: #e63946;
+    --accent-color: #ffb703;
+    --bg-color: #fff5f5;
+    --card-bg: #ffffff;
+    --text-color: #2b2d42;
+    --subtext-color: #6c757d;
+    --font-main: 'Montserrat', sans-serif;
+    --font-handwriting: 'Caveat', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+/* --- 1. Главный экран (Hero) --- */
+.hero {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+.main-title {
+    font-family: var(--font-handwriting);
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--subtext-color);
+    margin-bottom: 25px;
+}
+
+.hero-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.hero-img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.counter-box {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--subtext-color);
+}
+
+.counter-timer {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+/* --- 2. Галерея воспоминаний --- */
+.gallery-section {
+    padding: 40px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.photo-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photo-caption {
+    font-size: 0.95rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* --- 3. Квест --- */
+.quiz-section {
+    padding: 40px 0;
+}
+
+.quiz-intro {
+    text-align: center;
+    color: var(--subtext-color);
+    margin-bottom: 25px;
+}
+
+.quiz-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.quiz-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-btn {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.option-btn:hover {
+    background: #ffe3e3;
+    border-color: #ffc9c9;
+}
+
+.option-btn.correct {
+    background: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.option-btn.wrong {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.quiz-feedback {
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* --- 4. Письмо с признанием --- */
+.love-letter-section {
+    padding: 40px 0;
+}
+
+.letter-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px 25px;
+    box-shadow: 0 8px 24px rgba(230, 57, 70, 0.08);
+    border: 1px solid #ffe3e3;
+    position: relative;
+}
+
+.letter-title {
+    font-family: var(--font-handwriting);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.letter-body p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* --- 5. Приглашение на свидание --- */
+.date-invite-section {
+    padding: 40px 0 20px;
+}
+
+.invite-card {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    color: white;
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(255, 117, 140, 0.3);
+}
+
+.invite-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.invite-desc {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.invite-details {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.main-btn {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.hidden-message {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+}
+
+/* --- Подвал --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: var(--subtext-color);
+}
